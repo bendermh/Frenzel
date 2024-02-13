@@ -22,7 +22,10 @@ actualFPS = 0
 limitFPS = 20
 camRight = None
 camLeft = None
-
+camMaxBr = 65.0 # depends of cammera
+camMaxCn = 65.0 # depends of cammera
+camDefBr = 35.0 # depends of cammera
+camDefCn = 35.0 # depends of cammera
 
 def initialCheck():  
     global camRight, camLeft
@@ -197,7 +200,7 @@ def cameraSelector(isFromError= False):
 
 
 class appVOG:
-    global camRight, camLeft
+    global camRight, camLeft, camMaxBr, camMaxCn
     
     def __init__(self):
       ########## WIDOW DRAW ##########
@@ -236,23 +239,27 @@ class appVOG:
       self.frameDownL.config(width= 650, height= 200)
       self.frameDownL.grid(column= 1, row= 1)
             
-      self.scaleCameraRgBright= tkinter.Scale(self.frameDownR, from_= 0.0, to= 1.0,resolution=0.01, orient="horizontal", label = "Right Camera Brightness", length = 325, command=self.setRgBr)        
+      self.scaleCameraRgBright= tkinter.Scale(self.frameDownR, from_= 0.0, to= camMaxBr,resolution=0.01, orient="horizontal", label = "Right Camera Brightness", length = 325, command=self.setRgBr)        
       self.scaleCameraRgBright.grid(column=0,row=0)
-      self.scaleCameraRgContrast= tkinter.Scale(self.frameDownR, from_= 0.0, to= 1.0,resolution=0.01, orient="horizontal", label = "Right Camera Contrast", length = 325, command=self.setRgCn)        
+      self.scaleCameraRgContrast= tkinter.Scale(self.frameDownR, from_= 0.0, to= camMaxCn,resolution=0.01, orient="horizontal", label = "Right Camera Contrast", length = 325, command=self.setRgCn)        
       self.scaleCameraRgContrast.grid(column=1,row=0)      
-      self.scaleCameraLfBright= tkinter.Scale(self.frameDownL, from_= 0.0, to= 1.0,resolution=0.01, orient="horizontal", label = "Right Camera Brightness", length = 325, command=self.setLfBr)      
+      self.scaleCameraLfBright= tkinter.Scale(self.frameDownL, from_= 0.0, to= camMaxBr,resolution=0.01, orient="horizontal", label = "Right Camera Brightness", length = 325, command=self.setLfBr)      
       self.scaleCameraLfBright.grid(column=0,row=0)
-      self.scaleCameraLfContrast= tkinter.Scale(self.frameDownL, from_= 0.0, to= 1.0,resolution=0.01, orient="horizontal", label = "Right Camera Contrast", length = 325, command=self.setLfCn)
+      self.scaleCameraLfContrast= tkinter.Scale(self.frameDownL, from_= 0.0, to= camMaxCn,resolution=0.01, orient="horizontal", label = "Right Camera Contrast", length = 325, command=self.setLfCn)
       self.scaleCameraLfContrast.grid(column=1,row=0)
             
       self.buttonConfigure = tkinter.Button(self.ventana, text="Configure Cameras", command= self.loadCameraSelector)
       self.buttonConfigure.grid(column=0, row=2, columnspan=2)
       ########## WIDOW DRAW END ##########
                     
-      self.scaleCameraRgBright.set(camRight.brightness)
-      self.scaleCameraRgContrast.set(camRight.brightness)
-      self.scaleCameraLfBright.set(camLeft.brightness)
-      self.scaleCameraLfContrast.set(camLeft.brightness)
+      self.scaleCameraRgBright.set(camDefBr)
+      self.scaleCameraRgContrast.set(camDefCn)
+      self.scaleCameraLfBright.set(camDefBr)
+      self.scaleCameraLfContrast.set(camDefCn)
+      camRight.vid.set(cv2.CAP_PROP_BRIGHTNESS,camDefBr)
+      camRight.vid.set(cv2.CAP_PROP_CONTRAST,camDefCn)        
+      camLeft.vid.set(cv2.CAP_PROP_BRIGHTNESS,camDefBr)
+      camLeft.vid.set(cv2.CAP_PROP_CONTRAST,camDefCn)                
       self.counter = 1
       self.pstamp = time.localtime()[5]
       self.delay = 1  # This is a refresh timedelay
