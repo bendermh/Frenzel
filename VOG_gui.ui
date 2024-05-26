@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.4" author="PygubuDesigner 0.39.3">
+  <project>
+    <settings>
+      <setting id="name">VOG_GUI</setting>
+      <setting id="description">code example</setting>
+      <setting id="module_name">GUICODE_EXAMPLE</setting>
+      <setting id="template">application</setting>
+      <setting id="main_widget">mainVOG</setting>
+      <setting id="main_classname">VOG</setting>
+      <setting id="main_menu" />
+      <setting id="output_dir" />
+      <setting id="output_dir2" />
+      <setting id="import_tkvariables">True</setting>
+      <setting id="use_ttk_styledefinition_file">True</setting>
+      <setting id="use_i18n">False</setting>
+      <setting id="all_ids_attributes">False</setting>
+      <setting id="generate_code_onsave">False</setting>
+      <setting id="use_window_centering_code">False</setting>
+      <setting id="ttk_style_definition_file" />
+    </settings>
+    <customwidgets />
+  </project>
+  <object class="tk.Toplevel" id="mainVOG" named="True">
+    <property name="geometry">1920x1080</property>
+    <property name="resizable">none</property>
+    <property name="takefocus">true</property>
+    <property name="title" translatable="yes">Video Oculographer</property>
+    <child>
+      <object class="ttk.Frame" id="top" named="True">
+        <property name="height">200</property>
+        <layout manager="pack">
+          <property name="expand">false</property>
+          <property name="fill">x</property>
+          <property name="side">top</property>
+        </layout>
+        <containerlayout manager="pack">
+          <property name="propagate">false</property>
+        </containerlayout>
+        <child>
+          <object class="ttk.Frame" id="frame1">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="side">left</property>
+            </layout>
+            <child>
+              <object class="tk.Canvas" id="logo" named="True">
+                <property name="height">154</property>
+                <property name="relief">flat</property>
+                <property name="width">350</property>
+                <layout manager="pack">
+                  <property name="padx">40</property>
+                  <property name="side">left</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="frame3">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="padx">60</property>
+              <property name="side">left</property>
+            </layout>
+            <child>
+              <object class="ttk.Frame" id="frame5">
+                <property name="height">200</property>
+                <property name="width">200</property>
+                <layout manager="pack">
+                  <property name="padx">60</property>
+                  <property name="side">left</property>
+                </layout>
+                <child>
+                  <object class="ttk.Button" id="button1">
+                    <property name="command" type="command" cbtype="simple">srUp</property>
+                    <property name="text" translatable="yes">Up</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="button2">
+                    <property name="command" type="command" cbtype="simple">srDn</property>
+                    <property name="text" translatable="yes">Down</property>
+                    <layout manager="pack">
+                      <property name="side">bottom</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="button3">
+                    <property name="command" type="command" cbtype="simple">srRg</property>
+                    <property name="text" translatable="yes">Right</property>
+                    <layout manager="pack">
+                      <property name="side">left</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="button4">
+                    <property name="command" type="command" cbtype="simple">srLf</property>
+                    <property name="text" translatable="yes">Left</property>
+                    <layout manager="pack">
+                      <property name="side">right</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="tk.Canvas" id="miniR" named="True">
+                    <property name="height">144</property>
+                    <property name="width">256</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Frame" id="frame6">
+                <property name="height">200</property>
+                <property name="width">200</property>
+                <layout manager="pack">
+                  <property name="padx">60</property>
+                  <property name="side">left</property>
+                </layout>
+                <child>
+                  <object class="ttk.Button" id="button5">
+                    <property name="command" type="command" cbtype="simple">slUp</property>
+                    <property name="text" translatable="yes">Up</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="button6">
+                    <property name="command" type="command" cbtype="simple">slDn</property>
+                    <property name="text" translatable="yes">Down</property>
+                    <layout manager="pack">
+                      <property name="side">bottom</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="button7">
+                    <property name="command" type="command" cbtype="simple">slRg</property>
+                    <property name="text" translatable="yes">Right</property>
+                    <layout manager="pack">
+                      <property name="side">left</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="ttk.Button" id="button8">
+                    <property name="command" type="command" cbtype="simple">slLf</property>
+                    <property name="text" translatable="yes">Left</property>
+                    <layout manager="pack">
+                      <property name="side">right</property>
+                    </layout>
+                  </object>
+                </child>
+                <child>
+                  <object class="tk.Canvas" id="miniL" named="True">
+                    <property name="height">144</property>
+                    <property name="width">256</property>
+                    <layout manager="pack">
+                      <property name="side">top</property>
+                    </layout>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="frame4">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="padx">10</property>
+              <property name="side">right</property>
+            </layout>
+            <child>
+              <object class="ttk.Button" id="setCam" named="True">
+                <property name="command" type="command" cbtype="simple">setcam</property>
+                <property name="text" translatable="yes">Select Camera</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Scale" id="ctrControl" named="True">
+                <property name="command" type="command" cbtype="scale">ctrChange</property>
+                <property name="from_">0.0</property>
+                <property name="length">200</property>
+                <property name="orient">horizontal</property>
+                <property name="variable">double:CtrValue</property>
+                <layout manager="pack">
+                  <property name="pady">10</property>
+                  <property name="side">bottom</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="label2">
+                <property name="text" translatable="yes">Setup Contrast</property>
+                <layout manager="pack">
+                  <property name="side">bottom</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Scale" id="brgControl" named="True">
+                <property name="command" type="command" cbtype="scale">brgChange</property>
+                <property name="from_">0.0</property>
+                <property name="length">200</property>
+                <property name="orient">horizontal</property>
+                <property name="variable">double:BrnValue</property>
+                <layout manager="pack">
+                  <property name="pady">10</property>
+                  <property name="side">bottom</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="label1">
+                <property name="text" translatable="yes">Setup Brightness</property>
+                <layout manager="pack">
+                  <property name="side">bottom</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="fps" named="True">
+                <property name="text" translatable="yes">XXX</property>
+                <layout manager="pack">
+                  <property name="side">right</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="frame7">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="side">right</property>
+            </layout>
+            <child>
+              <object class="ttk.Label" id="controlStatus" named="True">
+                <property name="text" translatable="yes">Control Board: ERROR</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Separator" id="separator1">
+                <property name="orient">horizontal</property>
+                <layout manager="pack">
+                  <property name="fill">x</property>
+                  <property name="pady">5</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Label" id="label3">
+                <property name="text" translatable="yes">Fixation light</property>
+                <layout manager="pack">
+                  <property name="padx">10</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="ttk.Checkbutton" id="fixationControl" named="True">
+                <property name="command" type="command" cbtype="simple">fixationChange</property>
+                <property name="text" translatable="yes">OFF</property>
+                <property name="textvariable">string:fixationControlText</property>
+                <property name="variable">boolean:fixationControlState</property>
+                <layout manager="pack">
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
+      <object class="ttk.Frame" id="frame2">
+        <layout manager="pack">
+          <property name="fill">x</property>
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="ttk.Frame" id="frame8">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="padx">35</property>
+              <property name="side">left</property>
+            </layout>
+            <child>
+              <object class="ttk.Label" id="label4">
+                <property name="font">{Courier New} 14 {bold}</property>
+                <property name="foreground">#ff0000</property>
+                <property name="text" translatable="yes">RIGHT EYE</property>
+                <layout manager="pack">
+                  <property name="anchor">w</property>
+                  <property name="pady">10</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Canvas" id="rightEye" named="True">
+                <property name="height">720</property>
+                <property name="state">normal</property>
+                <property name="width">900</property>
+                <layout manager="pack">
+                  <property name="side">bottom</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Frame" id="frame10">
+            <property name="height">200</property>
+            <property name="width">200</property>
+            <layout manager="pack">
+              <property name="padx">45</property>
+              <property name="side">left</property>
+            </layout>
+            <child>
+              <object class="ttk.Label" id="label5">
+                <property name="font">{Courier New} 14 {bold}</property>
+                <property name="foreground">#0000ff</property>
+                <property name="text" translatable="yes">LEFT EYE</property>
+                <layout manager="pack">
+                  <property name="anchor">w</property>
+                  <property name="pady">10</property>
+                  <property name="side">top</property>
+                </layout>
+              </object>
+            </child>
+            <child>
+              <object class="tk.Canvas" id="leftEye" named="True">
+                <property name="height">720</property>
+                <property name="state">normal</property>
+                <property name="width">900</property>
+                <layout manager="pack">
+                  <property name="side">bottom</property>
+                </layout>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>
